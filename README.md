@@ -6,9 +6,9 @@ Hello World is an app where like minded people can come together to share projec
 
 ## Links
 
-Server - https://express-hello-world-zmw.herokuapp.com/
+Server - https://hello-world-sg.cyclic.app
 
-Front end - https://hello-world-zmw.netlify.app/
+Front end - https://hello-world-sg.netlify.app
 
 ## Tech Stack
 
