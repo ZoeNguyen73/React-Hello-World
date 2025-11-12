@@ -15,8 +15,11 @@ import useAxiosPrivate from "../../../hooks/useAxiosPrivate";
 import AuthContext from "../../../context/AuthProvider";
 
 export default function UserCard(props) {
+  console.log("user prop: " + JSON.stringify(props.user));
   const { name, username, tagline, skills, interests, profile_pic_url } =
     props.user;
+
+  // console.log("usercard name: " + name + ", usercard skills: " + JSON.stringify(skills));
   const [buttonTitle, setButtonTitle] = useState("Following");
   const [followStatus, setFollowStatus] = useState(props.followed);
   const { auth } = useContext(AuthContext);
@@ -35,23 +38,27 @@ export default function UserCard(props) {
   useEffect(() => {
   }, [followStatus, appStatus]);
 
-  const skillsDisplay = skills.map((skill, idx) => {
-    return (
-      <Typography className="card-subtitle" key={idx} variant="caption">
-        {idx > 0 ? "| " : ""}
-        {skill}
-      </Typography>
-    );
-  });
+  const skillsDisplay = skills
+    ? skills.map((skill, idx) => {
+      return (
+        <Typography className="card-subtitle" key={idx} variant="caption">
+          {idx > 0 ? "| " : ""}
+          {skill}
+        </Typography>
+      );
+    })
+    : [];
 
-  const interestsDisplay = interests.map((interest, idx) => {
+  const interestsDisplay = interests
+  ? interests.map((interest, idx) => {
     return (
       <Typography className="card-subtitle" key={idx} variant="caption">
         {idx > 0 ? "| " : ""}
         {interest}
       </Typography>
     );
-  });
+  })
+  : [];
 
   const handleMouseOver = function () {
     setButtonTitle("Unfollow");

@@ -51,6 +51,7 @@ export default function UserIndexGrid(props) {
       try {
         const usersResponse = await axios.get(apiUrl);
         setUsers(usersResponse.data);
+        // console.log("usersResponse.data: " + JSON.stringify(usersResponse.data));
 
         if (username) {
           const followingUsersResponse = await axiosPrivate.get(
