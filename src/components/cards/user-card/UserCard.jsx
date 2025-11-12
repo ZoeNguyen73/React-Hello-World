@@ -15,11 +15,9 @@ import useAxiosPrivate from "../../../hooks/useAxiosPrivate";
 import AuthContext from "../../../context/AuthProvider";
 
 export default function UserCard(props) {
-  console.log("user prop: " + JSON.stringify(props.user));
   const { name, username, tagline, skills, interests, profile_pic_url } =
     props.user;
 
-  // console.log("usercard name: " + name + ", usercard skills: " + JSON.stringify(skills));
   const [buttonTitle, setButtonTitle] = useState("Following");
   const [followStatus, setFollowStatus] = useState(props.followed);
   const { auth } = useContext(AuthContext);
