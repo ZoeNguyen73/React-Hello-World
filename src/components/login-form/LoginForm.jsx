@@ -101,9 +101,9 @@ export default function LogInForm() {
         className={styles['title']}
         gutterBottom
       >
-        Log in by
+        Log in
       </Typography>
-      <Grid container direction="row" justifyContent={"center"}>
+      {/* <Grid container direction="row" justifyContent={"center"}>
         <Grid item>
           <GitHubIcon sx={{ marginY: 1 }} fontSize={"large"} />
         </Grid>
@@ -111,7 +111,7 @@ export default function LogInForm() {
 
       <Typography variant="subtitle1" className={styles['or']} gutterBottom>
         <span>or</span>
-      </Typography>
+      </Typography> */}
 
       <Box
         sx={{

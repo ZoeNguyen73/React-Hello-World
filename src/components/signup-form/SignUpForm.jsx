@@ -87,9 +87,9 @@ function LoginForm() {
         className={styles['title']}
         gutterBottom
       >
-        Sign up by
+        Sign up
       </Typography>
-      <Grid container direction="row" justifyContent={"center"}>
+      {/* <Grid container direction="row" justifyContent={"center"}>
         <Grid item>
           <GitHubIcon sx={{ marginY: 1 }} fontSize={"large"} />
         </Grid>
@@ -97,7 +97,7 @@ function LoginForm() {
 
       <Typography variant="subtitle1" className={styles['or']} gutterBottom>
         <span>or</span>
-      </Typography>
+      </Typography> */}
       <Box
         sx={{
           boxShadow: 7,
