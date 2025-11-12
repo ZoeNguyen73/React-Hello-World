@@ -77,14 +77,14 @@ export default function LoginModal(props) {
           paddingTop={2}
         >
           <Grid item>
-            <Typography variant={"body2"}>Log in with</Typography>
-            <GitHubIcon sx={{ marginY: 1 }} fontSize={"large"} />
+            <Typography variant={"body2"}>Log in</Typography>
+            {/* <GitHubIcon sx={{ marginY: 1 }} fontSize={"large"} /> */}
           </Grid>
         </Grid>
 
-        <Typography variant="subtitle1" className={"or"} gutterBottom>
+        {/* <Typography variant="subtitle1" className={"or"} gutterBottom>
           <span>or</span>
-        </Typography>
+        </Typography> */}
 
         <Box>
           <form>
