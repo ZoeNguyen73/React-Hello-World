@@ -2,12 +2,15 @@ import React from "react";
 import { useEffect, useState, useContext } from "react";
 
 import Grid from "@mui/material/Unstable_Grid2";
+import { Typography } from "@mui/material";
 
 import axios from "../../api/axios";
 import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import UserCard from "../cards/user-card/UserCard";
 import AuthContext from "../../context/AuthProvider";
 import LoginModal from "../modals/LoginModal";
+
+import "../contributor-index-grid/ContributorGrid.scss";
 
 export default function UserIndexGrid(props) {
   const [users, setUsers] = useState([]);
@@ -90,6 +93,14 @@ export default function UserIndexGrid(props) {
 
   return (
     <>
+      <Typography
+        variant='h6'
+        component="h1"
+        textAlign={'center'}
+        className='title'
+      >
+        Connect with like-minded community members
+      </Typography>
       <Grid
         container
         spacing={2}

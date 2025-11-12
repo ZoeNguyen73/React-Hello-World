@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState, useContext } from 'react';
 
 import Grid from '@mui/material/Unstable_Grid2';
+import Typography from "@mui/material/Typography";
 
 import axios from '../../api/axios';
 import useAxiosPrivate from '../../hooks/useAxiosPrivate';
@@ -9,6 +10,8 @@ import ContributorCard from '../cards/contributor-card/ContributorCard';
 import AuthContext from '../../context/AuthProvider';
 import LoginModal from '../modals/LoginModal';
 import DeleteModal from '../modals/DeleteModal';
+
+import "./ContributorGrid.scss";
 
 export default function UserIndexGrid(props) {
   const [ contributors, setContributors ] = useState([]);
@@ -105,6 +108,14 @@ export default function UserIndexGrid(props) {
 
   return (
     <>
+      <Typography
+        variant='h6'
+        component="h1"
+        textAlign={'center'}
+        className='title'
+      >
+        Available contributor roles that may interest you
+      </Typography>
       <Grid
         container
         spacing={2}
