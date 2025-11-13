@@ -6,7 +6,7 @@ Hello World is an app where like minded people can come together to share projec
 
 ## Links
 
-Server - https://hello-world-sg.cyclic.app
+Server - [https://express-hello-world-1-6zlx.onrender.com](https://express-hello-world-1-6zlx.onrender.com)
 
 Front end - https://hello-world-sg.netlify.app
 
