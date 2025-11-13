@@ -16,7 +16,7 @@ export default function Activation() {
     async function activate() {
       try {
         await axios.post(`/users/${activateToken}/activate`);
-        setMessage('Email successfully verified. You will be directed to login page shortly...')
+        setMessage('Account successfully verified. You will be directed to login page shortly...')
         setTimeout(navigate, 1500, '/login');
       } catch (err) {
       }
@@ -27,7 +27,7 @@ export default function Activation() {
   return (
     <Box>
       <Typography variant='h4' component='h1' color='var(--color3)'>
-        Email verification
+        Account activation
       </Typography>
 
       <Typography variant='body1' component='p' color='var(--color4)'>
