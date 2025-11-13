@@ -22,6 +22,8 @@ function LoginForm() {
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [severity, setSeverity] = useState('success');
+  const [activateToken, setActivateToken] = useState(null);
+  const [showActivateUrl, setShowActivateUrl] = useState(false);
   const { auth } = useContext(AuthContext);
 
   const handleRegistrationPost = (event) => {
@@ -35,9 +37,12 @@ function LoginForm() {
         confirm_password: confirmPasswordRef.current.value,
       })
       .then((response) => {
-        setOpen(true);
-        setMessage('Please check your emails for the activation link');
-        setSeverity('success');
+        console.log("register response: " + response.data);
+        setActivateToken(response.data.activateToken);
+        setShowActivateUrl(true);
+        // setOpen(true);
+        // setMessage('Please check your emails for the activation link');
+        // setSeverity('success');
         return;
       })
       .catch((error) => {
@@ -109,6 +114,11 @@ function LoginForm() {
           backgroundColor: "var(--color1)",
         }}
       >
+        { showActivateUrl && activateToken && (
+          <Link className={styles['link']} to={`/users/activate/${activateToken}`}>
+            <Typography>Click here to activate your account</Typography>
+          </Link>
+        )}
         <form id="registration-form">
           <Typography variant="subtitle1" gutterBottom>
             Name
