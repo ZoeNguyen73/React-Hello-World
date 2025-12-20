@@ -1,55 +1,142 @@
-# Hello World - front end
-## About
+# 🌍 Hello World — A Social Platform for Developers
 
-Hello World is an app where like minded people can come together to share project ideas, meet new and interesting friends and find contributors for their projects. It's Linkedin for developers!
+💻 **Live Demo (Frontend):** https://hello-world-sg.netlify.app  
+🛠️ **Backend API:** https://express-hello-world-1-6zlx.onrender.com
 
+---
 
-## Links
+## 🧭 Overview
 
-Server - [https://express-hello-world-1-6zlx.onrender.com](https://express-hello-world-1-6zlx.onrender.com)
+**Hello World** is a social platform designed for developers to **share project ideas, find collaborators, and connect with like-minded people**.
 
-Front end - https://hello-world-sg.netlify.app
+Think of it as **LinkedIn for developers**, with a focus on early-stage ideas, collaboration, and community-driven projects.
 
-## Tech Stack
+This project was built as a **team-based, full-stack application**, emphasizing planning, collaboration, and real-world feature complexity.
 
-In the frontend, the tech stack was:
+---
 
-* React - Main framework
-* React Router - used for FE routing
-* Material UI - A library for react with many pre made components
-* SASS - For CSS
-* JSON web token - For encrypted data sending
-* GSAP - For the animation
-* Axios - for making the API calls
+## 🚀 Features
 
-## Planning and Execution
+- 👤 **User authentication & profiles** (using JWT-based authentication)
+- 🧑‍💻 **Create, edit, and publish projects**
+- 🧩 **Contributor roles** for each project
+- 💬 **Project comments thread**
+- 🔍 **Browse & search projects** (guest access)
+- ⭐ **Social features**: Following users & projects
+- 📤 **Image uploads** for profiles and projects
 
-The team initially suggested ideas to each other until we had a list to choose from. Once we had settled on Hello World, we had a planning session at GA campus where we mapped out features and drew basic wire frames on the whiteboard. 
+---
 
-With the white board session done, the routes and data schema were designed to incorporate the views and features that had been designed. 
+## 🧰 Tech Stack
 
-We then spent a solid week on designing each view in figma and getting the flow and styling correct.
+### Frontend
 
-The back end was then prioritised, being substantially completed in one weekend to leave plenty of time to build the front end.
+- **React**: main framework
+- **React Router**: client-side routing
+- **Material UI (MUI)** & **SASS**: styling
+- **Axios**: API requests
 
-Front end works took approximately 1.5 weeks to complete and was significantly more difficult than initially expected. MUI has quite a steep learning curve and react state management would prove to be very tricky at times. 
+### Backend
 
-## Issues faced
+- **Node.js**
+- **Express**
+- **MongoDB**
+- **JWT**: authentication
+- **Multer**: image uploads
+- **RESTful API**
 
-* Image uploads - The whole process of getting images uploaded and creating a decent user experience was painful. Thoughts for next time is have one person do the image front end and backend as this would save time.
-* State management - There were numerous issues where state not updating immediately caused issues (such as image upload, checkboxes etc). Further practice is required to better understand when and where state will misbehave.
-* Scope - Looking back on it now, the project was ambitious for 2.5 weeks. There are a lot of moving parts and it required much more time than expected to get everything set up.
+### Hosting
 
-## User stories
+- **Frontend:** Netlify
+- **Backend:** Render
 
-* Users can create an account and login
-* Users can create a profile and edit their profile with various information.
-* Guests can view projects and search projects before signing up
-* Logged in users can create projects, create contributor roles for those projects and edit/them them accordingly.
-* Logged in users can discuss a project using the comments section of each project.
-* Users can follow each other, follow projects and apply for contributor roles within projects. 
-* Users can logout. 
+---
 
-## Initial concept images
+## 🧠 Development Process & Key Learnings
 
-Concept images can be found at https://www.figma.com/file/h5oEoEXdhu67xMLLpK1FQ7/HelloWorld?node-id=63%3A243
+Hello World was built as a **collaborative team project**, simulating a real-world development workflow.
+
+**Process highlights:**
+
+1. **Ideation & planning**
+
+   - Team brainstorming sessions
+   - Feature prioritization
+   - User stories definition
+
+2. **Design**
+
+   - Whiteboard wireframes
+   - Full UI flow designed in Figma
+   - Visual consistency & UX refinement
+
+3. **Architecture**
+
+   - Data schema & API route design
+   - Backend built first to unblock frontend
+   - Clear separation of concerns
+
+4. **Implementation**
+   - Backend completed first to allow parallel frontend work
+   - Frontend development followed with iterative refinement
+
+---
+
+## 🧩 Technical Highlights & Challenges
+
+| Area                   | Approach / Lessons Learned                                                               |
+| ---------------------- | ---------------------------------------------------------------------------------------- |
+| **Authentication**     | Implemented JWT-based auth with protected routes.                                        |
+| **Image uploads**      | Handled multipart uploads with Multer; required careful frontend/backend coordination.   |
+| **State management**   | Complex UI interactions exposed timing and async state challenges in React.              |
+| **MUI learning curve** | Pre-built components sped up development but required deep customization understanding.  |
+| **CORS & uploads**     | Learned correct multipart handling and CORS configuration through debugging real issues. |
+
+---
+
+## 💡 Lessons Learned
+
+- Full-stack apps require **tight frontend/backend alignment**
+- Image uploads are deceptively complex and benefit from ownership clarity
+- React state can behave unexpectedly without careful planning
+- Over-scoping increases risk in short timelines
+- Team communication and early planning save massive refactor time later
+
+---
+
+## 🧪 Future Improvements
+
+- 💬 Real-time messaging or notifications
+- 🔔 Activity feeds for followed users/projects
+- 🏷️ Advanced filters and search
+- 👥 Team roles & permissions
+- 📊 Project progress tracking
+- 🔒 Reinforced validation & error handling
+
+---
+
+## 🧑‍💻 Author
+
+**Zoe Nguyen** — Aspiring Full-Stack Developer  
+🌐 Portfolio _(coming soon)_  
+💼 [LinkedIn](https://www.linkedin.com/in/zoe-nguyen-ndnn/)  
+📫 nganguyen0703@gmail.com
+
+---
+
+## 📸 Screenshots
+
+| List & Filter                                             | Social Features                                    | Project & Role Creation                                            |
+| --------------------------------------------------------- | -------------------------------------------------- | ------------------------------------------------------------------ |
+| ![Filter](./src/screenshots/HelloWorld-filter-search.gif) | ![Social](./src/screenshots/HelloWorld-social.gif) | ![Project](./src/screenshots/HelloWorld-project-role-creation.gif) |
+
+---
+
+### 📈 Summary
+
+Hello World demonstrates my ability to:
+
+- Collaborate effectively in a team-based development environment
+- Design and build a **feature-rich full-stack application**
+- Handle real-world challenges like authentication, uploads, and state complexity
+- Deliver a deployed, production-ready project under time constraints
