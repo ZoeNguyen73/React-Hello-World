@@ -255,7 +255,7 @@ function MultiForm() {
       : { method: "post", url: "/projects", data: { ...form, state: "draft" } };
     const config = {
       headers: {
-        "Content-Type": "multipart/form-data boundary=???",
+        // "Content-Type": "multipart/form-data boundary=???",
       },
     };
 
@@ -267,26 +267,26 @@ function MultiForm() {
               method: "put",
               url: `/projects/${editProjectSlug}/upload`,
               data: form.logo_url_files,
-              headers: config,
+              ...config,
             }
           : {
               method: "post",
               url: `/projects/upload?slug=${response.data.slug}`,
               data: form.logo_url_files,
-              headers: config,
+              ...config,
             };
         const routeTwo = isEdit
           ? {
               method: "put",
               url: `/projects/${editProjectSlug}/upload`,
               data: convertedFiles,
-              headers: config,
+              ...config,
             }
           : {
               method: "post",
               url: `/projects/upload?slug=${response.data.slug}`,
               data: convertedFiles,
-              headers: config,
+              ...config,
             };
         const photoRequestOne = axiosPrivate(routeOne);
         const photoRequestTwo = axiosPrivate(routeTwo);
@@ -320,6 +320,7 @@ function MultiForm() {
   const publish = async (event) => {
     event.preventDefault();
     const convertedFiles = await convertFilesToFormData();
+
     const request = isEdit
       ? {
           method: "put",
@@ -327,11 +328,13 @@ function MultiForm() {
           data: { ...form, state: "published" },
         }
       : { method: "post", url: "/projects", data: { ...form, state: "published" } };
-    const config = {
+    
+      const config = {
       headers: {
-        "Content-Type": "multipart/form-data boundary=???",
+        // "Content-Type": "multipart/form-data boundary=???",
       },
     };
+
     axiosPrivate(request).then(
       (response) => {
         const routeOne = isEdit
@@ -339,26 +342,26 @@ function MultiForm() {
               method: "put",
               url: `/projects/${editProjectSlug}/upload`,
               data: form.logo_url_files,
-              headers: config,
+              ...config,
             }
           : {
               method: "post",
               url: `/projects/upload?slug=${response.data.slug}`,
               data: form.logo_url_files,
-              headers: config,
+              ...config,
             };
         const routeTwo = isEdit
           ? {
               method: "put",
               url: `/projects/${editProjectSlug}/upload`,
               data: convertedFiles,
-              headers: config,
+              ...config,
             }
           : {
               method: "post",
               url: `/projects/upload?slug=${response.data.slug}`,
               data: convertedFiles,
-              headers: config,
+              ...config,
             };
         const photoRequestOne = axiosPrivate(routeOne);
         const photoRequestTwo = axiosPrivate(routeTwo);
@@ -370,15 +373,16 @@ function MultiForm() {
             }, 2000);
           }),
           axiosMain.spread((...errors) => {
-            snackbarAlert(true, "error", "Ooops, something went wrong...");
+            snackbarAlert(true, "error", "Oops, something went wrong...");
           })
         );
       },
       (error) => {
+        console.log("error: " + JSON.stringify(error));
         snackbarAlert(
           true,
           "error",
-          error?.response?.data?.error || "Ooops, something went wrong..."
+          error?.response?.data?.error || "Oops, something went wrong..."
         );
       }
     );
